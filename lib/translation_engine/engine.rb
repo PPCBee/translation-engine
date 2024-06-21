@@ -1,3 +1,8 @@
+require_relative '../../app/middlewares/translation_engine/catcher_middleware'
+require_relative '../../app/middlewares/translation_engine/connection_exception_middleware'
+require_relative '../../app/middlewares/translation_engine/keys_middleware'
+require_relative '../../app/middlewares/translation_engine/screenshots_middleware'
+
 module TranslationEngine
   class Engine < ::Rails::Engine
     isolate_namespace TranslationEngine
@@ -61,4 +66,3 @@ module TranslationEngine
     end
   end
 end
-
