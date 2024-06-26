@@ -1,7 +1,5 @@
-$:.push File.expand_path('../lib', __FILE__)
-
 # Maintain your gem's version:
-require 'translation_engine/version'
+require_relative "lib/translation_engine/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
@@ -14,7 +12,9 @@ Gem::Specification.new do |s|
   s.description = 'Description of TranslationEngine.'
   s.license     = 'MIT'
 
-  s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir.chdir(File.expand_path(__dir__)) do
+    Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  end
   s.test_files = Dir['test/**/*']
 
   s.add_dependency 'rails', '>= 4.2.0'

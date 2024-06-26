@@ -1,3 +1,5 @@
+require_relative 'request'
+
 module TranslationEngine
   class ScreenshotsMiddleware
     include Request
